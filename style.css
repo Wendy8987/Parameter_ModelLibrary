@@ -101,7 +101,34 @@ table {
     margin: 0 5px;
 }
 #object_parameter input{
- width: 250px;
- margin: 0 10px;
- display: block;
+    width: 250px;
+    margin: 5px 10px;
+    display: block;
+}
+.parameter_box{
+    display: flex;
+}
+#del_btn{
+    margin: 0 10px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    color: #FAFAFA;  
+}
+#add_btn{
+    margin: 10px 0;
+    border: none;
+    color: #FAFAFA;
+    background-color: rgb(0, 136, 255);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+}
+.add_container{
+    width: 400px;
+    background-color: antiquewhite;
+    position: relative;
 }

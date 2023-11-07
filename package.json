@@ -1,0 +1,30 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "three.js",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c ./rollup.config.mjs",
+    "watch": "rollup -w -c ./rollup.config.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wendy8987/Parameter_ModelLibrary.git"
+  },
+  "author": "Wendy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wendy8987/Parameter_ModelLibrary/issues"
+  },
+  "homepage": "https://github.com/Wendy8987/Parameter_ModelLibrary#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.3.0"
+  },
+  "dependencies": {
+    "three": "^0.158.0",
+    "web-ifc-three": "^0.0.125"
+  }
+}

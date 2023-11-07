@@ -26,7 +26,7 @@
             <input type="file" class="form-control" id="inputGroupFile01">
           </div>
           <div class="Viewer">
-            <canvas></canvas>
+            <canvas id="parameter_canvas"></canvas>
           </div>
         </div>
         <div class="right_side">
@@ -45,7 +45,14 @@
               </div>
               <div id="object_parameter">
                 <label for="">Parameter</label>
-                <input type="text" placeholder="Please enter model parameter">  
+                <div class="parameter_box" v-for="(item, index) in object" :key="index">
+                  <input type="text" pattern="[a-zA-Z0-9]+" v-model="item.parameter" placeholder="輸入參數名稱" style="width: 100px;">
+                  <input type="number" v-model="item.value" placeholder="輸入對應數值"> 
+                  <button id="del_btn" v-on:click="delObjPara(item)">x</button> 
+                </div>
+                <div class="add_container">
+                  <button id="add_btn" v-on:click="add_input()">+</button>
+                </div>
               </div>
               </div>
           </div>
@@ -53,7 +60,38 @@
       </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script type="module" src="./bundle.js"></script>
 <script>
-
+new Vue({
+  el:".container_box",
+  data:function(){
+    return{
+      hello:"World",
+      object:[{
+        parameter:"",
+        value:""
+      }]
+    }
+  },
+  mounted:{
+  
+  },
+  methods:{
+    add_input(){
+      this.object.push({
+        parameter:"",
+        value:""
+      })
+    },
+    delObjPara(item){
+      var index = this.object.indexOf(item);
+      if(index !== -1){
+        this.object.splice(index, 1);
+      }
+    }
+  }
+})
 </script>
 </html>
